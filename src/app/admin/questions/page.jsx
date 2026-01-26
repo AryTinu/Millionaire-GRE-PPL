@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Pencil, Trash2, Plus } from "lucide-react";
 import { useQuestionsStore } from "@/store/questionsStore";
 import  Sidebar from "@/components/admin/Sidebar";
+import QuestionBulkUpload from "@/components/admin/QuestionBulkUpload";
 
 export default function QuestionsPage() {
   const router = useRouter();
@@ -28,6 +29,9 @@ export default function QuestionsPage() {
           Create Question
         </button>
       </div>
+      
+      <QuestionBulkUpload onSuccess={() => router.refresh()} />
+
 
       {/* Table */}
       <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
