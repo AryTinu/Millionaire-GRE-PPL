@@ -27,8 +27,8 @@ export default function Sidebar() {
     {
       name: "Dashboard",
       icon: LayoutDashboard,
-      href: "/admin",
-      match: "/admin",
+      href: "/admin/dashboard",
+      match: "/admin/dashboard",
     },
     {
       name: "Questions",
