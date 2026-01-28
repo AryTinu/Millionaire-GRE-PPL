@@ -43,8 +43,8 @@ export default function Sidebar() {
     {
       name: "Results",
       icon: CheckSquare,
-      href: "/admin/results",
-      match: "/admin/results",
+      href: "/admin/result",
+      match: "/admin/result",
     },
     {
       name: "Students",
