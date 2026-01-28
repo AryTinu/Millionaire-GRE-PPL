@@ -10,9 +10,7 @@ import {
   FolderOpen,
   PieChart,
   ListChecks,
-  Settings,
   ScrollText,
-  Award,
   Menu,
   X,
 } from "lucide-react";
@@ -61,28 +59,10 @@ export default function Sidebar() {
       match: "/admin/categories",
     },
     {
-      name: "Analytics",
-      icon: PieChart,
-      href: "/admin/analytics",
-      match: "/admin/analytics",
-    },
-    {
       name: "Test Attempts",
       icon: ListChecks,
       href: "/admin/attempts",
       match: "/admin/attempts",
-    },
-    {
-      name: "Settings",
-      icon: Settings,
-      href: "/admin/settings",
-      match: "/admin/settings",
-    },
-    {
-      name: "Logs",
-      icon: ScrollText,
-      href: "/admin/logs",
-      match: "/admin/logs",
     },
   ];
 
@@ -97,7 +77,7 @@ export default function Sidebar() {
         <div className="flex items-center justify-between">
           {sidebarOpen && (
             <h2 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
-              MIllionaire-GRE
+              Millionaire-GRE
             </h2>
           )}
           <button
@@ -118,9 +98,12 @@ export default function Sidebar() {
         <ul className="space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
+
+            // ✅ FIXED ACTIVE LOGIC
             const isActive =
-              pathname === item.match ||
-              pathname.startsWith(item.match + "/");
+              item.match === "/admin"
+                ? pathname === "/admin"
+                : pathname.startsWith(item.match);
 
             return (
               <li key={item.name}>
@@ -148,8 +131,6 @@ export default function Sidebar() {
           })}
         </ul>
       </nav>
-
-    
     </aside>
   );
 }
